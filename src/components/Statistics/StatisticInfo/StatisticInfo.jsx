@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Title, Description} from './StatisticInfo.styled'
 
 export const StatisticInfo = ({
   Obj,
@@ -9,14 +10,14 @@ export const StatisticInfo = ({
 }) => {
     return (
         <div>
-            <h1>{message}</h1>
+            <Title>{message}</Title>
             {Obj.map((item, idx) => {
                 return (
-                    <p key={idx}>{item[0]}: {item[1]}</p>
+                    <Description key={idx}>{item[0]}: {item[1]}</Description>
                 )
             })}
-            <p>Total: {total}</p>
-            <p>Positive feedback: {!Number.isNaN(state) && positivePercentage}</p>
+            <Description>Total: {total}</Description>
+            <Description>Positive feedback: {!Number.isNaN(state) && positivePercentage}</Description>
         </div>
   )
 };

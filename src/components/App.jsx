@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Sections} from './App.styled'
+import {Sections, Div} from './App.styled'
 import { Buttons } from './Buttons/Buttons';
 import { Statistics } from './Statistics/Statistics/Statistics'
 
@@ -26,7 +26,6 @@ export class App extends Component {
      return (
     <div
       style={{
-        // height: '100vh',
            display: 'flex',
            flexDirection: 'column',
         justifyContent: 'center',
@@ -36,8 +35,10 @@ export class App extends Component {
       }}
        >
           <Sections>
-            <h1>Please leave Feedback</h1>
-           <Buttons options={KEYS} onLeaveFeedback={this.onLeaveFeedback} />
+           <h1>Please leave Feedback</h1>
+           <Div>
+             <Buttons options={KEYS} onLeaveFeedback={this.onLeaveFeedback} />
+             </Div>
            <Statistics
               message="Statistics"
               Obj={Obj}
