@@ -12,6 +12,10 @@ export const Sections = styled.section`
     0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 `;
 
+export const Title = styled.h1`
+  font-size: 32px;
+`;
+
 export const Div = styled.div`
   display: flex;
   gap: 15px;

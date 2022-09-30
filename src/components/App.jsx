@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Sections, Div} from './App.styled'
+import {Sections,Title, Div} from './App.styled'
 import { Buttons } from './Buttons/Buttons';
 import { Statistics } from './Statistics/Statistics/Statistics'
 
@@ -35,7 +35,7 @@ export class App extends Component {
       }}
        >
           <Sections>
-           <h1>Please leave Feedback</h1>
+           <Title>Please leave Feedback</Title>
            <Div>
              <Buttons options={KEYS} onLeaveFeedback={this.onLeaveFeedback} />
              </Div>
