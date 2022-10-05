@@ -16,7 +16,7 @@ export const Title = styled.h1`
   font-size: 32px;
 `;
 
-export const Div = styled.div`
+export const Box = styled.div`
   display: flex;
   gap: 15px;
 `;

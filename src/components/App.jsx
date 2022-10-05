@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import {Sections,Title, Div} from './App.styled'
+import { Notification } from './Notificaton/Notification'
+import {Sections,Title, Box} from './App.styled'
 import { Buttons } from './Buttons/Buttons';
-import { Statistics } from './Statistics/Statistics/Statistics'
+import { Statistics } from './Statistics/Statistics'
 
 export class App extends Component {
   state = { good: 0, neutral: 0, bad: 0 };
@@ -36,18 +37,19 @@ export class App extends Component {
        >
           <Sections>
            <Title>Please leave Feedback</Title>
-           <Div>
+           <Box>
              <Buttons options={KEYS} onLeaveFeedback={this.onLeaveFeedback} />
-             </Div>
-           <Statistics
+           </Box>
+           {this.countTotalFeedback(this.state) === 0 ? (
+             <Notification message="There is no feedback" />
+           ) : (
+             <Statistics
               message="Statistics"
               Obj={Obj}
               total={this.countTotalFeedback(this.state)}
-              positivePercentage={this.countPositiveFeedbackPercentage(
-                this.state
-              )}
-              state={this.state}
-            />
+              positivePercentage={this.countPositiveFeedbackPercentage(this.state)}
+              state={this.state} />
+            )}           
          </Sections>
     </div>
     );
